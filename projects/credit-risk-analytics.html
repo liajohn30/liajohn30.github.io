@@ -1,1 +1,369 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credit Risk Analytics | Lia Annie John</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .case-study {
+      max-width: 1000px;
+      margin: 70px auto;
+      padding: 0 24px 80px;
+    }
+    .case-study h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin: 20px 0;
+    }
+    .case-study h2 {
+      margin: 50px 0 16px;
+    }
+    .case-study h3 {
+      margin: 28px 0 12px;
+    }
+    .case-study p {
+      line-height: 1.8;
+      max-width: 800px;
+    }
+    .project-tags {
+      color: #777;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .metric {
+      border: 1px solid #ddd;
+      padding: 22px;
+      border-radius: 6px;
+    }
+    .metric strong {
+      display: block;
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+    .metric span {
+      color: #666;
+      font-size: 0.85rem;
+    }
+    .result-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 22px 0;
+      font-size: 0.92rem;
+    }
+    .result-table th,
+    .result-table td {
+      padding: 13px 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    .result-table th {
+      font-weight: 600;
+    }
+    .table-scroll {
+      overflow-x: auto;
+    }
+    .workflow-link {
+      display: inline-block;
+      margin: 12px 0;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 30px;
+    }
+    .project-section {
+      padding-bottom: 25px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    @media (max-width: 700px) {
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="case-study">
+
+    <a href="../index.html#projects" class="back-link">
+      &larr; Back to Projects
+    </a>
+
+    <p class="project-tags">
+      MACHINE LEARNING · PREDICTIVE ANALYTICS · ALTAIR AI STUDIO
+    </p>
+
+    <h1>Credit Risk Analytics & Machine Learning</h1>
+
+    <h2>Project Overview</h2>
+    <p>
+      An end-to-end predictive analytics project developed
+      using Altair AI Studio (RapidMiner) as part of the
+      MIS772 Predictive Analytics coursework at Deakin
+      University.
+    </p>
+    <p>
+      The project explores customer financial behaviour
+      through credit risk classification, customer
+      segmentation, payment-delay prediction and loan
+      association mining. Multiple machine learning
+      algorithms were evaluated to identify suitable
+      approaches for each analytical objective.
+    </p>
+
+    <div class="metrics">
+      <div class="metric">
+        <strong>83.04%</strong>
+        <span>Credit classification accuracy</span>
+      </div>
+      <div class="metric">
+        <strong>80.64%</strong>
+        <span>Poor credit score recall</span>
+      </div>
+      <div class="metric">
+        <strong>8.261</strong>
+        <span>Payment delay MAE (days)</span>
+      </div>
+    </div>
+
+    <section class="project-section">
+      <h2>01. Credit Risk Classification</h2>
+
+      <p>
+        Developed a classification workflow to identify
+        customers with Poor or Good credit scores using
+        financial and repayment characteristics.
+      </p>
+
+      <p>
+        Preprocessing included invalid-value detection,
+        missing-value treatment, attribute transformation
+        and predictor selection.
+      </p>
+
+      <p>
+        Evaluated k-NN, Decision Tree, Random Forest,
+        Naive Bayes, Gradient Boosted Trees, Decision
+        Stump and Deep Learning. Voting ensembles and
+        cross-validation were also investigated.
+      </p>
+
+      <h3>Selected Model Performance</h3>
+
+      <div class="table-scroll">
+        <table class="result-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Accuracy</th>
+              <th>Poor Recall</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Decision Tree</td>
+              <td>80.71%</td>
+              <td>74.68%</td>
+            </tr>
+            <tr>
+              <td>Random Forest</td>
+              <td>80.25%</td>
+              <td>73.65%</td>
+            </tr>
+            <tr>
+              <td>Deep Learning</td>
+              <td>81.86%</td>
+              <td>80.21%</td>
+            </tr>
+            <tr>
+              <td>Gradient Boosted Trees (50-fold CV)</td>
+              <td><strong>83.04%</strong></td>
+              <td><strong>80.64%</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        The final selected Gradient Boosted Trees model
+        achieved 83.04% cross-validated accuracy and
+        80.64% recall for the Poor credit score class.
+        Identifying higher-risk customers was prioritised
+        during model evaluation.
+      </p>
+
+      <a class="workflow-link"
+         href="credit-risk-files/credit_risk_gradient_boosted_trees.rmp"
+         download>
+        Download Classification Workflow &rarr;
+      </a>
+    </section>
+
+    <section class="project-section">
+      <h2>02. Customer Segmentation</h2>
+
+      <p>
+        Applied K-Means clustering to identify groups
+        of customers with similar financial characteristics.
+        Numerical attributes were range-normalised before
+        clustering.
+      </p>
+
+      <p>
+        Cluster counts from 2 to 20 were evaluated using
+        the Davies-Bouldin index and within-cluster sum
+        of squares. The selected two-cluster solution
+        achieved a Davies-Bouldin index of approximately
+        1.30.
+      </p>
+
+      <p>
+        The analysis identified two customer segments:
+        one with comparatively stronger financial
+        characteristics and another with greater credit
+        and repayment pressure.
+      </p>
+
+      <a class="workflow-link"
+         href="credit-risk-files/customer_segmentation_kmeans.rmp"
+         download>
+        Download K-Means Workflow &rarr;
+      </a>
+    </section>
+
+    <section class="project-section">
+      <h2>03. Payment Delay Prediction</h2>
+
+      <p>
+        Developed regression models to estimate the
+        number of days customers delay payments based
+        on their financial characteristics.
+      </p>
+
+      <p>
+        Compared Linear Regression, Decision Tree,
+        Deep Learning and Random Forest using
+        10-fold cross-validation.
+      </p>
+
+      <h3>Model Comparison</h3>
+
+      <div class="table-scroll">
+        <table class="result-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>RMSE (days)</th>
+              <th>MAE (days)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Linear Regression</td>
+              <td>10.941</td>
+              <td>8.642</td>
+            </tr>
+            <tr>
+              <td>Decision Tree</td>
+              <td>10.911</td>
+              <td>8.588</td>
+            </tr>
+            <tr>
+              <td>Deep Learning</td>
+              <td>10.801</td>
+              <td>8.518</td>
+            </tr>
+            <tr>
+              <td><strong>Random Forest</strong></td>
+              <td><strong>10.439</strong></td>
+              <td><strong>8.261</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Random Forest achieved the lowest prediction
+        error among the evaluated models. The predictions
+        could support earlier customer engagement,
+        although the error levels mean they should not
+        be treated as exact payment dates.
+      </p>
+
+      <a class="workflow-link"
+         href="credit-risk-files/payment_delay_random_forest.rmp"
+         download>
+        Download Random Forest Workflow &rarr;
+      </a>
+    </section>
+
+    <section class="project-section">
+      <h2>04. Loan Association Mining</h2>
+
+      <p>
+        Applied FP-Growth and association-rule mining
+        to explore which loan products customers
+        commonly held together.
+      </p>
+
+      <p>
+        Loan types were converted into binary indicators
+        before mining frequent itemsets. Association
+        rules were evaluated using support, confidence
+        and lift.
+      </p>
+
+      <p>
+        Credit-Builder and Home-Equity loans appeared
+        together in approximately 14.7% of analysed
+        records. However, their lift of approximately
+        1.067 indicated a relatively weak association,
+        limiting the strength of potential cross-selling
+        conclusions.
+      </p>
+
+      <a class="workflow-link"
+         href="credit-risk-files/loan_association_mining.rmp"
+         download>
+        Download Association Mining Workflow &rarr;
+      </a>
+    </section>
+
+    <h2>Tools & Skills</h2>
+    <p>
+      Altair AI Studio (RapidMiner) · Machine Learning ·
+      Classification · Regression · Clustering ·
+      Ensemble Learning · Deep Learning ·
+      Cross-Validation · Data Preprocessing ·
+      Association Rule Mining · Model Evaluation
+    </p>
+
+    <h2>Key Takeaway</h2>
+    <p>
+      This project demonstrates the complete predictive
+      analytics workflow, from preparing financial data
+      and experimenting with multiple algorithms to
+      evaluating model performance and translating
+      results into business insights.
+    </p>
+
+    <p>
+      The downloadable RapidMiner processes are provided
+      for technical review. Reproducing them may require
+      reconnecting the original datasets.
+    </p>
+
+  </main>
+</body>
+</html>
+
