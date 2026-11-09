@@ -89,6 +89,24 @@
         grid-template-columns: 1fr;
       }
     }
+    .project-visual {
+    margin: 30px 0;
+    }
+    .project-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    }
+    .project-visual figcaption {
+    margin-top: 10px;
+    color: #777;
+    font-size: 0.85rem;
+    text-align: center;
+    line-height: 1.6;
+    }
+
   </style>
 </head>
 
@@ -157,6 +175,19 @@
         Stump and Deep Learning. Voting ensembles and
         cross-validation were also investigated.
       </p>
+
+      <figure class="project-visual">
+        <img
+          src="../assets/credit-risk-classification.png"
+          alt="Gradient Boosted Trees classification results showing 83.04% accuracy and 80.64% recall for the Poor credit score class"
+          loading="lazy"
+          >
+        <figcaption>
+          Gradient Boosted Trees: 50-fold cross-validation
+          results and confusion matrix.
+        </figcaption>
+      </figure>
+
 
       <h3>Selected Model Performance</h3>
 
