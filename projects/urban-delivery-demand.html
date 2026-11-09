@@ -1,1 +1,430 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urban Delivery Demand Prediction | Lia Annie John</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #292929;
+    background: #fff;
+    line-height: 1.8;
+}
+
+.project-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 70px 28px 100px;
+}
+
+.back-link {
+    color: #777;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.back-link:hover { color: #222; }
+
+.project-category {
+    margin-top: 60px;
+    color: #888;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    margin: 18px 0 24px;
+}
+
+.project-intro {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 750px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.tags span {
+    padding: 5px 12px;
+    background: #f5f5f5;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 45px 0 60px;
+}
+
+.metric {
+    padding: 25px;
+    border: 1px solid #e9e9e9;
+    border-radius: 5px;
+}
+
+.metric strong {
+    display: block;
+    font-size: 1.7rem;
+    line-height: 1.3;
+}
+
+.metric span {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.project-section {
+    margin-top: 65px;
+}
+
+.project-section h2 {
+    font-size: 1.55rem;
+    margin-bottom: 20px;
+}
+
+.project-section h3 {
+    font-size: 1.1rem;
+    margin-top: 30px;
+}
+
+.project-section p,
+.project-section li {
+    color: #606060;
+}
+
+.project-section ul {
+    padding-left: 22px;
+}
+
+.project-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.92rem;
+}
+
+.project-table th,
+.project-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: left;
+}
+
+.project-table th {
+    background: #f8f8f8;
+}
+
+.project-visual {
+    margin: 35px 0;
+}
+
+.project-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+}
+
+.project-visual figcaption {
+    margin-top: 10px;
+    color: #777;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #222;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid #222;
+}
+
+@media (max-width: 600px) {
+    .project-container { padding: 35px 20px 70px; }
+    .metrics { grid-template-columns: 1fr; }
+    .project-table { font-size: 0.8rem; }
+    .project-table th,
+    .project-table td { padding: 10px; }
+}
+</style>
+</head>
+
+<body>
+<main class="project-container">
+
+<a href="../index.html#projects" class="back-link">
+    &larr; Back to Projects
+</a>
+
+<p class="project-category">
+    Data Science / Deep Learning / Forecasting
+</p>
+
+<h1>Urban Delivery Demand Prediction</h1>
+
+<p class="project-intro">
+    Forecasting hourly last-mile delivery demand across
+    geographical zones using Long Short-Term Memory (LSTM)
+    networks and Temporal Graph Convolutional Networks (T-GCN).
+    Developed as part of the Chameleon Melbourne Open Playground
+    urban delivery demand prediction project.
+</p>
+
+<div class="tags">
+    <span>Python</span>
+    <span>TensorFlow</span>
+    <span>PyTorch</span>
+    <span>Graph Neural Networks</span>
+    <span>Time-Series Forecasting</span>
+    <span>Scikit-learn</span>
+</div>
+
+<div class="metrics">
+    <div class="metric">
+        <strong>100K</strong>
+        <span>Source delivery records</span>
+    </div>
+    <div class="metric">
+        <strong>10</strong>
+        <span>Geographical demand zones</span>
+    </div>
+    <div class="metric">
+        <strong>4</strong>
+        <span>Model configurations evaluated</span>
+    </div>
+</div>
+
+<section class="project-section">
+    <h2>01. Project Overview</h2>
+
+    <p>
+        Last-mile delivery operations experience fluctuating
+        demand across locations and time periods. Predicting
+        demand at the zone and hourly level can support
+        operational planning and resource allocation.
+    </p>
+
+    <p>
+        This project explored whether incorporating geographical
+        relationships between delivery zones through graph
+        neural networks could improve demand forecasting
+        compared with a temporal LSTM baseline.
+    </p>
+</section>
+
+<section class="project-section">
+    <h2>02. Data Preparation &amp; Feature Engineering</h2>
+
+    <p>
+        The workflow began with delivery order records,
+        including timestamps and restaurant coordinates.
+        Data preparation involved examining missing values,
+        converting date-time fields, filtering relevant
+        delivery records and aggregating demand by hour.
+    </p>
+
+    <ul>
+        <li>
+            Applied K-Means clustering to restaurant coordinates
+            to define 10 geographical demand zones.
+        </li>
+        <li>
+            Aggregated completed delivery orders into
+            hourly demand observations for each zone.
+        </li>
+        <li>
+            Constructed historical input sequences for
+            neural network forecasting.
+        </li>
+        <li>
+            Used chronological training and testing splits
+            to evaluate predictions on later observations.
+        </li>
+    </ul>
+</section>
+
+<section class="project-section">
+    <h2>03. LSTM Baseline</h2>
+
+    <p>
+        An LSTM network was developed as a baseline for
+        learning temporal demand patterns from historical
+        observations. The model used recurrent layers
+        with regularisation and was evaluated using
+        Mean Absolute Error (MAE) and Root Mean Squared
+        Error (RMSE).
+    </p>
+
+    <h3>Baseline Performance</h3>
+
+    <table class="project-table">
+        <thead>
+            <tr>
+                <th>Metric</th>
+                <th>Test Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>MAE</td>
+                <td>4.174</td>
+            </tr>
+            <tr>
+                <td>RMSE</td>
+                <td>5.583</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="project-section">
+    <h2>04. Temporal Graph Convolutional Network</h2>
+
+    <p>
+        To incorporate spatial information, a graph-based
+        forecasting approach was investigated. Geographical
+        zones were represented as nodes, with connections
+        describing relationships between zones.
+    </p>
+
+    <p>
+        The T-GCN architecture combined graph convolution
+        with recurrent temporal modelling, allowing the
+        experiments to examine both spatial relationships
+        and historical demand behaviour.
+    </p>
+
+    <h3>Model Experiments</h3>
+
+    <ul>
+        <li>
+            Original T-GCN using the constructed zone graph.
+        </li>
+        <li>
+            Sparse top-k graph configuration to reduce
+            the number of zone connections.
+        </li>
+        <li>
+            Feature-enhanced sparse T-GCN to investigate
+            additional temporal information.
+        </li>
+    </ul>
+</section>
+
+<section class="project-section">
+    <h2>05. Model Evaluation &amp; Comparison</h2>
+
+    <p>
+        The notebook evaluated multiple configurations
+        using forecasting error metrics. The results below
+        reflect the recorded evaluation outputs.
+    </p>
+
+    <table class="project-table">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>MAE</th>
+                <th>RMSE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>LSTM Baseline</td>
+                <td>4.174</td>
+                <td>5.583</td>
+            </tr>
+            <tr>
+                <td>Original T-GCN*</td>
+                <td>4.174</td>
+                <td>5.583</td>
+            </tr>
+            <tr>
+                <td>Sparse Top-K T-GCN</td>
+                <td>4.590</td>
+                <td>6.422</td>
+            </tr>
+            <tr>
+                <td>Feature-Enhanced T-GCN</td>
+                <td>4.716</td>
+                <td>6.490</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <small>
+            *The exported evaluation displays identical metrics
+            for the LSTM and original T-GCN. This result requires
+            verification before drawing conclusions about
+            their relative performance.
+        </small>
+    </p>
+
+    <h3>Key Findings</h3>
+
+    <p>
+        The experiments demonstrated that adding graph
+        structure or additional features did not
+        automatically reduce forecasting error.
+        The sparse configurations recorded higher errors
+        than the LSTM baseline, highlighting the importance
+        of graph design and careful model evaluation.
+    </p>
+</section>
+
+<section class="project-section">
+    <h2>06. Tools &amp; Technical Skills</h2>
+
+    <div class="tags">
+        <span>Python</span>
+        <span>Pandas</span>
+        <span>NumPy</span>
+        <span>Scikit-learn</span>
+        <span>TensorFlow / Keras</span>
+        <span>PyTorch</span>
+        <span>PyTorch Geometric</span>
+        <span>Time-Series Analysis</span>
+        <span>Graph Construction</span>
+        <span>Model Evaluation</span>
+    </div>
+</section>
+
+<section class="project-section">
+    <h2>07. Key Takeaway</h2>
+
+    <p>
+        This project provided practical experience in
+        developing and evaluating deep learning approaches
+        for spatio-temporal forecasting. It reinforced
+        the importance of data preparation, geographical
+        representation, controlled experimentation and
+        transparent interpretation of model performance.
+    </p>
+</section>
+
+</main>
+</body>
+</html>
+
