@@ -1,141 +1,347 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-commerce Sales Dashboard | Lia Annie John</title>
-  <link rel="stylesheet" href="../style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    .case-study {
-      max-width: 1100px;
-      margin: 70px auto;
-      padding: 0 24px;
-    }
+    <meta name="description"
+          content="E-commerce Sales Performance Dashboard case study by Lia Annie John, featuring interactive Tableau business intelligence visualisations.">
 
-    .case-study h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      margin: 20px 0;
-    }
+    <title>E-commerce Sales Dashboard | Lia Annie John</title>
 
-    .case-study h2 {
-      margin-top: 50px;
-      margin-bottom: 16px;
-    }
+    <link rel="stylesheet" href="../style.css">
 
-    .case-study p {
-      line-height: 1.8;
-      max-width: 760px;
-    }
+    <style>
+        /* Case Study Layout */
 
-    .project-tags {
-      color: #777;
-      font-size: 0.9rem;
-    }
+        .case-study {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 65px 30px 110px;
+        }
 
-    .dashboard-container {
-      margin-top: 32px;
-      width: 100%;
-      min-height: 900px;
-    }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 55px;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 13px;
+        }
 
-    .dashboard-container iframe {
-      width: 100%;
-      height: 1050px;
-      border: none;
-    }
+        .back-link:hover {
+            color: var(--accent);
+        }
 
-    .back-link {
-      display: inline-block;
-      margin-bottom: 30px;
-    }
+        /* Header */
 
-    .dashboard-link {
-      display: inline-block;
-      margin-top: 16px;
-      text-decoration: underline;
-    }
+        .case-study-header {
+            padding-bottom: 55px;
+            border-bottom: 1px solid var(--border);
+        }
 
-    @media (max-width: 768px) {
-      .dashboard-container iframe {
-        height: 850px;
-      }
-    }
-  </style>
+        .case-study-header .eyebrow {
+            margin-bottom: 20px;
+        }
+
+        .case-study h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(38px, 6vw, 58px);
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 25px;
+        }
+
+        .case-study-intro {
+            font-size: 16px;
+            color: var(--muted);
+            line-height: 1.85;
+            max-width: 760px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 30px;
+        }
+
+        .project-tags span {
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 11px;
+            padding: 7px 12px;
+        }
+
+        /* Sections */
+
+        .project-section {
+            padding: 65px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(27px, 4vw, 35px);
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: 25px;
+        }
+
+        .project-section p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.85;
+            max-width: 790px;
+            margin-bottom: 17px;
+        }
+
+        /* Dashboard */
+
+        .dashboard-container {
+            width: 100%;
+            margin: 35px 0 20px;
+            padding: 12px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .dashboard-container iframe {
+            display: block;
+            width: 100%;
+            height: 1050px;
+            border: 0;
+            background: white;
+        }
+
+        .dashboard-caption {
+            margin-top: 14px;
+            font-size: 12px;
+            color: var(--muted);
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        /* Links */
+
+        .dashboard-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding-bottom: 5px;
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+            transition: color 0.2s ease;
+        }
+
+        .dashboard-link:hover {
+            color: var(--accent);
+        }
+
+        /* Skills */
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 25px;
+        }
+
+        .skills-tags span {
+            border: 1px solid var(--border);
+            padding: 7px 12px;
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        /* Footer */
+
+        .case-study-footer {
+            padding-top: 50px;
+            margin-top: 20px;
+        }
+
+        .case-study-footer a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 700px) {
+            .case-study {
+                padding: 35px 20px 75px;
+            }
+
+            .back-link {
+                margin-bottom: 40px;
+            }
+
+            .case-study-header {
+                padding-bottom: 40px;
+            }
+
+            .project-section {
+                padding: 45px 0;
+            }
+
+            .dashboard-container {
+                padding: 6px;
+            }
+
+            .dashboard-container iframe {
+                height: 850px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <main class="case-study">
 
+<main class="case-study">
+
+    <!-- BACK NAVIGATION -->
     <a href="../index.html#projects" class="back-link">
-      &larr; Back to Projects
+        &larr; Back to Projects
     </a>
 
-    <p class="project-tags">
-      TABLEAU · BUSINESS INTELLIGENCE · DATA VISUALISATION
-    </p>
+    <!-- PROJECT HEADER -->
+    <header class="case-study-header">
 
-    <h1>E-commerce Sales Performance Dashboard</h1>
+        <p class="eyebrow">
+            BUSINESS INTELLIGENCE · DATA VISUALISATION
+        </p>
 
-    <h2>Overview</h2>
-    <p>
-      An interactive Tableau dashboard designed to analyse
-      e-commerce sales, profitability, customer behaviour,
-      and promotional performance. The dashboard provides
-      a consolidated view of key business metrics and
-      enables exploration across stores, brands, customer
-      segments, and membership groups.
-    </p>
+        <h1>E-commerce Sales Performance Dashboard</h1>
 
-    <h2>Interactive Dashboard</h2>
-    <p>
-      Explore the dashboard using the interactive filters
-      to examine sales performance across different
-      periods, customer segments, membership types,
-      and brands.
-    </p>
+        <p class="case-study-intro">
+            An interactive Tableau dashboard designed
+            to analyse e-commerce sales, profitability,
+            customer behaviour and promotional performance.
+            The dashboard provides a consolidated view
+            of key business metrics and enables exploration
+            across stores, brands, customer segments
+            and membership groups.
+        </p>
 
-    <div class="dashboard-container">
-      <iframe
-        src="https://public.tableau.com/views/MIS771_Dashboard/Dashboard1?:showVizHome=no&:embed=yes&:toolbar=no"
-        title="E-commerce Sales Performance Tableau Dashboard"
-        loading="lazy"
-        allowfullscreen>
-      </iframe>
+        <div class="project-tags">
+            <span>Tableau</span>
+            <span>Business Intelligence</span>
+            <span>Data Visualisation</span>
+            <span>KPI Reporting</span>
+            <span>Sales Analytics</span>
+        </div>
+
+    </header>
+
+    <!-- INTERACTIVE DASHBOARD -->
+    <section class="project-section">
+
+        <h2>01. Interactive Dashboard</h2>
+
+        <p>
+            Explore the dashboard using interactive filters
+            to examine sales performance across different
+            periods, customer segments, membership types
+            and brands.
+        </p>
+
+        <div class="dashboard-container">
+
+            <iframe
+                src="https://public.tableau.com/views/MIS771_Dashboard/Dashboard1?:showVizHome=no&amp;:embed=yes&amp;:toolbar=no"
+                title="E-commerce Sales Performance Tableau Dashboard"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+        <p class="dashboard-caption">
+            Interactive Tableau dashboard showing sales,
+            profitability and customer performance metrics.
+        </p>
+
+        <a
+            class="dashboard-link"
+            href="https://public.tableau.com/app/profile/lia.annie.john/viz/MIS771_Dashboard/Dashboard1"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Open Dashboard in Tableau Public &rarr;
+        </a>
+
+    </section>
+
+    <!-- DASHBOARD HIGHLIGHTS -->
+    <section class="project-section">
+
+        <h2>02. Dashboard Highlights</h2>
+
+        <p>
+            The dashboard brings together key performance
+            indicators to support an overall understanding
+            of e-commerce business performance.
+        </p>
+
+        <p>
+            It presents net sales, gross margin,
+            transaction volume and return rate,
+            alongside monthly sales trends,
+            store-level comparisons, brand performance,
+            customer segment analysis and promotional
+            performance by membership status.
+        </p>
+
+    </section>
+
+    <!-- SKILLS -->
+    <section class="project-section">
+
+        <h2>03. Tools &amp; Technical Skills</h2>
+
+        <div class="skills-tags">
+            <span>Tableau</span>
+            <span>Interactive Dashboards</span>
+            <span>KPI Reporting</span>
+            <span>Business Performance Analysis</span>
+            <span>Data Visualisation</span>
+        </div>
+
+    </section>
+
+    <!-- KEY TAKEAWAY -->
+    <section class="project-section">
+
+        <h2>04. Key Takeaway</h2>
+
+        <p>
+            This project demonstrates how interactive
+            dashboards can bring together multiple
+            business performance indicators to support
+            clearer reporting and exploratory analysis.
+        </p>
+
+    </section>
+
+    <!-- FOOTER NAVIGATION -->
+    <div class="case-study-footer">
+
+        <a href="../index.html#projects">
+            &larr; Back to All Projects
+        </a>
+
     </div>
 
-    <a
-      class="dashboard-link"
-      href="https://public.tableau.com/app/profile/lia.annie.john/viz/MIS771_Dashboard/Dashboard1"
-      target="_blank"
-      rel="noopener noreferrer">
-      Open Dashboard in Tableau Public &rarr;
-    </a>
+</main>
 
-    <h2>Dashboard Highlights</h2>
-    <p>
-      The dashboard presents net sales, gross margin,
-      transaction volume, and return rate alongside
-      monthly sales trends, store-level comparisons,
-      brand performance, customer segment analysis,
-      and promotional performance by membership status.
-    </p>
-
-    <h2>Skills Demonstrated</h2>
-    <p>
-      Tableau · Interactive Dashboards · KPI Reporting ·
-      Business Performance Analysis · Data Visualisation
-    </p>
-
-    <h2>Key Takeaway</h2>
-    <p>
-      This project demonstrates how interactive dashboards
-      can bring together multiple business performance
-      indicators to support clearer reporting and
-      exploratory analysis.
-    </p>
-
-  </main>
 </body>
 </html>
